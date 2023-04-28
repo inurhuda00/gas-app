@@ -4,7 +4,6 @@ export default function Career({
     title = "",
     subtitle = "",
     careers = [],
-    target = "career",
     ...props
 }) {
     return (

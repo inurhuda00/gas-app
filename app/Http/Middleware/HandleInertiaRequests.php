@@ -50,7 +50,7 @@ class HandleInertiaRequests extends Middleware
                 ],
                 [
                     'label' => 'Daftar',
-                    'href' => '#join'
+                    'href' => '#cta'
                 ],
                 [
                     'label' => 'Karir',
