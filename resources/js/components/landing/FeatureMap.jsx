@@ -15,8 +15,13 @@ export default function FeatureMap({ title, subtitle, ...props }) {
                         {subtitle}
                     </p>
                 </div>
-                <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-                    map
+                <div className="mx-auto mt-8 max-w-2xl sm:mt-20 lg:mt-12 lg:max-w-none">
+                    <img
+                        class="w-full"
+                        src="/map.png"
+                        className="w-full max-w-3xl"
+                        alt={title}
+                    />
                 </div>
             </div>
         </Container>

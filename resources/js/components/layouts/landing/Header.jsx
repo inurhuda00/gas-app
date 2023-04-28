@@ -1,6 +1,6 @@
 import { Button } from "@/components/shared/Button";
 import { Container } from "@/components/shared/Container";
-import { Logo } from "@/components/shared/Logo";
+import { Logomark } from "@/components/shared/Logo";
 import { Popover } from "@headlessui/react";
 import { Link, usePage } from "@inertiajs/react";
 import { NavLinks } from "./NavLinks";
@@ -49,12 +49,12 @@ export function Header() {
         navigationsLink,
     } = usePage().props;
     return (
-        <header>
+        <header className="bg-[#FEC00C]">
             <nav>
                 <Container className="relative z-50 flex py-8">
                     <div className="relative z-10 flex flex-1 items-center gap-16">
-                        <Link href="/" aria-label="Home">
-                            <Logo className="h-10 w-auto" />
+                        <Link href="/" aria-label="Home" className="ml-6">
+                            <Logomark />
                         </Link>
                         <div className="hidden lg:flex lg:justify-center lg:flex-1 lg:gap-10">
                             <NavLinks />
@@ -103,7 +103,7 @@ export function Header() {
                                                         >
                                                             Log in
                                                         </Button>
-                                                        <Button href="#">
+                                                        <Button href="/register">
                                                             Jadi Mitra
                                                         </Button>
                                                     </div>
@@ -120,7 +120,8 @@ export function Header() {
                                 <Button
                                     href={route("logout")}
                                     method="post"
-                                    variant="outline"
+                                    variant="solid"
+                                    color="white"
                                     className="hidden lg:block"
                                 >
                                     Sign out
@@ -139,12 +140,16 @@ export function Header() {
                             <>
                                 <Button
                                     href="/login"
-                                    variant="outline"
+                                    variant="solid"
+                                    color="white"
                                     className="hidden lg:block"
                                 >
                                     Sign in
                                 </Button>
-                                <Button href="#" className="hidden lg:block">
+                                <Button
+                                    href="/register"
+                                    className="hidden lg:block"
+                                >
                                     Jadi Mitra
                                 </Button>
                             </>

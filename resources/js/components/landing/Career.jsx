@@ -24,14 +24,23 @@ export default function Career({
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
                     <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
                         {careers.map((career, id) => (
-                            <div key={id} className="relative pl-16">
-                                <dt className="text-base font-semibold leading-7 text-gray-900">
-                                    <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600"></div>
-                                    {career.name}
-                                </dt>
-                                <dd className="mt-2 text-base leading-7 text-gray-600">
-                                    {career.description}
-                                </dd>
+                            <div key={id} className=" flex gap-x-4">
+                                <div className="flex h-32 items-center justify-center rounded-lg w-1/4">
+                                    <img
+                                        class="w-full"
+                                        src="/map.png"
+                                        className="object-cover rounded-b-full w-full h-full border border-black"
+                                        alt={career.name}
+                                    />
+                                </div>
+                                <div className="w-3/4">
+                                    <span className="font-semibold text-lg">
+                                        {career.name}
+                                    </span>
+                                    <dd className="mt-2 text-base leading-7 text-gray-600">
+                                        {career.description}
+                                    </dd>
+                                </div>
                             </div>
                         ))}
                     </dl>

@@ -20,13 +20,26 @@ export default function Feature({
                         {subtitle}
                     </p>
                 </div>
-                <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-                    <dl className="flex max-w-xl gap-x-8 flex-warp gap-y-16 lg:max-w-none">
+                <div className="mx-auto mt-8 max-w-2xl sm:mt-20 lg:mt-12 lg:max-w-none">
+                    <dl className="grid grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-16">
                         {features.map((feature, index) => (
-                            <div key={index} className="flex flex-col">
-                                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                                    {feature.name}
-                                </dt>
+                            <div
+                                key={index}
+                                className="flex flex-col items-center w-full justify-center max-w-sm mx-auto rounded overflow-hidden shadow-lg bg-[#FEC00C] px-4"
+                            >
+                                <div className="py-12 lg:py-6 ">
+                                    <img
+                                        class="w-full"
+                                        src="/map.png"
+                                        className="rounded-full object-cover w-32 h-32"
+                                        alt={feature.name}
+                                    />
+                                </div>
+                                <div class="px-6 py-4">
+                                    <div class="font-semibold mb-2">
+                                        {feature.name}
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </dl>

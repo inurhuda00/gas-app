@@ -122,7 +122,7 @@ class DatabaseSeeder extends Seeder
                 "section" => "Career",
                 "props" => [
                     "title" => "Temukan Karir Impianmu",
-                    "subtitle" => "Mari bergabung bersama kami. <br /> Jadilah bagian dari kami dan kembangkan bakat, ide kreatifmu dalam GAS",
+                    "subtitle" => "Mari bergabung bersama kami. Jadilah bagian dari kami dan kembangkan bakat, ide kreatifmu dalam GAS",
                     "careers" => [
                         [
                             "name" => "Marketing Comunication",
@@ -150,7 +150,7 @@ class DatabaseSeeder extends Seeder
                 "section" => "About",
                 "props" => [
                     "title" => "Tentang Kami",
-                    "subtitle" => "GAS adalah aplikasi untuk memudahkan pelaku udaha menjangkau calon pembeli lebih luas melalui gerakan #AyoBelanjaTokoTetangga <br /> GAS mengajak untuk menjelajah dan mendukung usaha-usaha di sekitarmu."
+                    "subtitle" => "GAS adalah aplikasi untuk memudahkan pelaku udaha menjangkau calon pembeli lebih luas melalui gerakan #AyoBelanjaTokoTetangga GAS mengajak untuk menjelajah dan mendukung usaha-usaha di sekitarmu."
                 ]
             ]
         ])->each(fn ($category) => Site::find($site->id)->sections()->create($category));

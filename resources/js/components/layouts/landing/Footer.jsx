@@ -1,5 +1,6 @@
 import NavLink from "@/components/NavLink";
 import { Container } from "@/components/shared/Container";
+import { Logomark } from "@/components/shared/Logo";
 
 export function Footer() {
     return (
@@ -7,8 +8,8 @@ export function Footer() {
             <Container className="max-w-4xl">
                 <div className="flex flex-col justify-between items-start gap-y-12 gap-x-5 pt-16 pb-6 lg:flex-row lg:py-16">
                     <div className="flex items-center text-gray-900">
-                        <div className="ml-4">
-                            <p className="text-base font-semibold">GAS</p>
+                        <div className="ml-6">
+                            <Logomark />
                         </div>
                     </div>
                     <div className="flex items-center text-gray-900">
@@ -49,7 +50,7 @@ export function Footer() {
                             <p className="text-base font-semibold">Unduh</p>
                             <img
                                 className="h-20 -ml-4"
-                                src="/storage/google-play-badge.png"
+                                src="/google-play-badge.png"
                                 alt="google play download"
                             />
                         </div>
