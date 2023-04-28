@@ -38,23 +38,23 @@ class HandleInertiaRequests extends Middleware
             'navigationsLink' => [
                 [
                     'label' => 'Beranda',
-                    'href' => '#beranda'
+                    'href' => '#hero'
                 ],
                 [
                     'label' => 'Tentang',
-                    'href' => '#tentang'
+                    'href' => '#about'
                 ],
                 [
                     'label' => 'Fitur',
-                    'href' => '#fitur'
+                    'href' => '#feature'
                 ],
                 [
                     'label' => 'Daftar',
-                    'href' => '#daftar'
+                    'href' => '#join'
                 ],
                 [
                     'label' => 'Karir',
-                    'href' => '#karir'
+                    'href' => '#career'
                 ],
             ],
             'ziggy' => function () use ($request) {

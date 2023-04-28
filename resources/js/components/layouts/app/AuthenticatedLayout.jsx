@@ -4,6 +4,7 @@ import ResponsiveNavLink from "@/components/ResponsiveNavLink";
 import { Logo } from "@/components/shared/Logo";
 import { Link } from "@inertiajs/react";
 import { useState } from "react";
+import { Toaster } from "react-hot-toast";
 
 export default function Authenticated({ user, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
@@ -11,6 +12,7 @@ export default function Authenticated({ user, header, children }) {
 
     return (
         <div className="min-h-screen bg-gray-100">
+            <Toaster />
             <nav className="bg-white border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
@@ -27,6 +29,12 @@ export default function Authenticated({ user, header, children }) {
                                     active={route().current("dashboard")}
                                 >
                                     Dashboard
+                                </NavLink>
+                                <NavLink
+                                    href={route("site.edit")}
+                                    active={route().current("site.edit")}
+                                >
+                                    Settings
                                 </NavLink>
                             </div>
                         </div>

@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SectionController;
+use App\Http\Controllers\SiteController;
+use App\Models\Section;
+use App\Models\Site;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -20,14 +24,24 @@ Route::get('/', function () {
     return Inertia::render('LandingPage', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+        'sections' => Site::with('sections')->first()->sections
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard', [
+            'sections' => Site::with('sections')->first()->sections
+        ]);
+    })->name('dashboard');
+
+    Route::put('/reorder', [SectionController::class, 'reorder'])->name('section.reorder');
+    Route::put('/section/{section}', [SectionController::class, 'update'])->name('section.update');
+
+    Route::get('/settings', [SiteController::class, 'edit'])->name('site.edit');
+    Route::patch('/site/{site}', [SiteController::class, 'update'])->name('site.update');
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

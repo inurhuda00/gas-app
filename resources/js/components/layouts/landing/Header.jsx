@@ -117,18 +117,15 @@ export function Header() {
 
                         {user ? (
                             <>
-                                <Link
+                                <Button
                                     href={route("logout")}
                                     method="post"
-                                    as="button"
+                                    variant="outline"
+                                    className="hidden lg:block"
                                 >
-                                    <Button
-                                        variant="outline"
-                                        className="hidden lg:block"
-                                    >
-                                        Sign out
-                                    </Button>
-                                </Link>
+                                    Sign out
+                                </Button>
+
                                 <Link
                                     href="/dashboard"
                                     className="hidden lg:block relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
